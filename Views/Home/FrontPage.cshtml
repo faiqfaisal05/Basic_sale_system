@@ -1,0 +1,138 @@
+﻿@{
+    ViewBag.Title = "Front Page";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Assuming you have a shared layout
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <style>
+       
+        body {
+            background-color: #007cc0;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 20%;
+            margin: 0;
+            height: 100vh;
+        }
+
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0cbaba;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 35px;
+            font-size: 1.2em;
+            margin-top: 60px;
+            margin-bottom: 90px;
+            width: 50%;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+            .btn span {
+               
+                position: absolute;
+                display: block;
+                background: orange;
+                width: 100%;
+                height: 50%;
+                top: 0;
+                left: 0;
+                transform: scaleY(0);
+                transform-origin: top;
+                transition: transform 0.9s;
+                z-index: -1;
+            }
+
+            .btn:hover span {
+                transform: scaleX(1);
+               /* transform-origin: left;*/
+            }
+
+            /*.btn span:nth-child(1) {
+                transition-delay: 0.1s;
+            }
+
+            .btn span:nth-child(2) {
+                transition-delay: 0.2s;
+            }
+
+            .btn span:nth-child(3) {
+                transition-delay: 0.3s;
+            }
+
+            .btn span:nth-child(4) {
+                transition-delay: 0.4s;
+            }*/
+            .btn span:nth-child(2) {
+                top: auto;
+                bottom: 0;
+                transform-origin: bottom;
+            }
+
+            .btn:hover {
+                background-color: #0cbaba;
+            }
+
+       
+        .navbar {
+            background: linear-gradient(135deg, #007cc0, #0cbaba, #1dd1a1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-link {
+            color: #fff;
+        }
+
+            .nav-link:hover {
+                color: #ffcc00;
+            }
+
+      
+        body {
+            padding-top: 100px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Welcome to Sale Management System</h1>
+        <p>Your ultimate tool for managing sales efficiently.</p>
+        <a href="/Home/Index" class="btn">
+            Get Started
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+
+    </div>
+</body>
+</html>
