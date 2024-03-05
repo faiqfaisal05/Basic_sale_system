@@ -170,7 +170,6 @@ function updateProduct(row) {
             // Proceed with the update
             document.getElementById('addProductBtn').click();
         } else {
-            // Reset the modal fields if the update is cancelled
             document.getElementById('productCode').value = productCode;
             document.getElementById('productName').value = productName;
             document.getElementById('productPrice').value = productPrice;
@@ -209,6 +208,7 @@ function showPopup(message) {
     }, 2000);
 }
 
+
 function clearModalFields() {
     document.getElementById("productCode").value = "";
     document.getElementById("productName").value = "";
@@ -217,5 +217,5 @@ function clearModalFields() {
 
 btn.onclick = function () {
     modal.style.display = "block";
-    clearModalFields(); // Clear the modal fields
+    clearModalFields();
 }
