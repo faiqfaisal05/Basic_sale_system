@@ -30,6 +30,17 @@ document.getElementById("addProductBtn").addEventListener("click", function () {
     const productName = document.getElementById("productName").value;
     const productPrice = document.getElementById("productPrice").value;
     const productQuantity = 1;
+
+    // Validate that all fields are not empty
+    if (productCode.trim() === "" || productName.trim() === "" || productPrice.trim() === "") {
+        Swal.fire({
+            icon: 'error',
+            title: 'Empty Fields',
+            text: 'Please fill in all fields to add a new product.'
+        });
+        return;
+    }
+
     // Validate product name (only allow alphabetic characters and spaces)
     const nameRegex = /^[a-zA-Z\s]*$/;
     if (!nameRegex.test(productName.trim())) {
@@ -64,6 +75,7 @@ document.getElementById("addProductBtn").addEventListener("click", function () {
         });
         return;
     }
+
     const table = document.getElementById("productTable").getElementsByTagName("tbody")[0];
     const newRow = table.insertRow(-1);
     newRow.innerHTML = `
@@ -102,7 +114,17 @@ document.getElementById("addProductBtn").addEventListener("click", function () {
     updateButton.addEventListener('click', function () {
         updateProduct(newRow);
     });
+
+    // Clear modal fields
+    clearModalFields();
 });
+
+// Function to clear modal fields
+function clearModalFields() {
+    document.getElementById("productCode").value = "";
+    document.getElementById("productName").value = "";
+    document.getElementById("productPrice").value = "";
+}
 
 // Function to delete a product
 function deleteProduct(row) {
@@ -207,7 +229,6 @@ function showPopup(message) {
         popup.remove();
     }, 2000);
 }
-
 
 function clearModalFields() {
     document.getElementById("productCode").value = "";
