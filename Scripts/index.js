@@ -200,7 +200,6 @@ function updateProduct(row) {
     });
 }
 
-
 // Function to update the total invoice amount
 function updateTotalInvoiceAmount() {
     let totalInvoiceAmount = 0;
