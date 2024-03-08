@@ -24,6 +24,7 @@ window.onclick = function (event) {
     }
 }
 
+
 // Add event listener for adding a new product
 document.getElementById("addProductBtn").addEventListener("click", function () {
     const productCode = document.getElementById("productCode").value;
@@ -239,3 +240,4 @@ btn.onclick = function () {
     modal.style.display = "block";
     clearModalFields();
 }
+
